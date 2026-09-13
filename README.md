@@ -1,5 +1,11 @@
 # Credit Score MLOps
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://meio-credit-card-mlops.streamlit.app)
+
+**[Try the live demo](https://meio-credit-card-mlops.streamlit.app)**, no
+install needed: pick a Poor/Standard/Good preset or fill in the 23-field form
+and get a prediction in seconds.
+
 End-to-end, leakage-safe credit-score classification: an OOP training pipeline
 tracked with MLflow and tuned with Optuna, served locally via Streamlit, and
 deployed to AWS (S3, a SageMaker real-time endpoint, and an EC2-hosted
@@ -148,7 +154,9 @@ training and inference always go through the same preprocessing. Two front
 ends load it: [`app/streamlit_app.py`](app/streamlit_app.py), a 23-field form
 with Poor/Standard/Good preset buttons and per-class probability bars, and
 [`scripts/predict.py`](scripts/predict.py), a CLI with `--selftest`,
-`--input CSV`, and `--json` modes.
+`--input CSV`, and `--json` modes. The Streamlit app is also deployed live on
+[Streamlit Community Cloud](https://meio-credit-card-mlops.streamlit.app), no
+install required.
 
 **Cloud (AWS):** the same model, packaged and deployed via
 [`cloud/aws/`](cloud/aws/README.md). `model.tar.gz` goes to S3, then a
@@ -233,8 +241,6 @@ credit-score-mlops/
   shared between the local and cloud code paths. They're currently
   duplicated, since the two were built at different points in the project,
   and unifying them would also remove the `__main__` pickle-remapping hack.
-- Re-deploy a live demo (Streamlit Community Cloud or Hugging Face Spaces)
-  now that the AWS Academy sandbox has expired.
 - Add SHAP-based feature-importance explanations to the Streamlit prediction
   card.
 
