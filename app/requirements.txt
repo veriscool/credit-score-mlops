@@ -1,0 +1,12 @@
+# Deployment-only dependencies for app/streamlit_app.py (Streamlit Community
+# Cloud reads this file instead of the repo-root requirements.txt because it
+# lives next to the app's entrypoint). Training-only packages (mlflow, optuna,
+# imbalanced-learn, matplotlib, xgboost) are intentionally left out: the
+# saved bundle's champion model is LightGBM, and unpickling + predicting with
+# it needs only what's pinned below. Verified against a clean venv with just
+# these five packages installed.
+streamlit==1.58.0
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+lightgbm==4.6.0
