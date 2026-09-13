@@ -1,0 +1,12 @@
+# Pinned to the versions the pipeline, CLI predictor, and Streamlit app were
+# verified against (conda env `new_model_deployment`, Python 3.10).
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+xgboost==3.2.0
+lightgbm==4.6.0
+imbalanced-learn==0.14.2
+mlflow==3.14.0
+optuna==4.9.0
+matplotlib==3.10.9
+streamlit==1.58.0
